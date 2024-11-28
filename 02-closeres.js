@@ -22,7 +22,32 @@ console.log(fnB);
 
 // ********Поваренок
 
-const makeDish = function (sheffName, dish) {
-    console.log(`${sheffName} готовит ${dish}`);
+// const makeDish = function (sheffName, dish) {
+//     console.log(`${sheffName} готовит ${dish}`);
+// };
+
+// makeDish('Mango', 'пирожок');
+// makeDish('Mango', 'омлет');
+// makeDish('Mango', 'чай');
+
+// makeDish('Poly', 'котлеты');
+// makeDish('Poly', 'супчик');
+// makeDish('Poly', 'кофе');
+
+const makeSheff = function (name) {
+    const makeDish = function (dish) {
+        console.log(`${name} готовит ${dish}`);
+    };
+    return makeDish;
 };
+
+const mango = makeSheff('Mango');
+ 
+mango('чай');
+mango('apple');
+
+
+
+
+
 
