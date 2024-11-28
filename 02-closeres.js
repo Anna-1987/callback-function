@@ -7,7 +7,18 @@
 
 const fnA = function (parameter) {
     const innerVariable = 'значение внутренней функции fnA';
+    const innerFunction = function () {
+        console.log(parameter);
+        console.log(innerVariable);
+        console.log('Это функция вызова innerFunction');
+    }
+    return innerFunction;
 };
+
+const fnB = fnA(555);
+fnB();
+console.log(fnB);
+
 
 // ********Поваренок
 
