@@ -5,19 +5,19 @@
 // родительской функции(той из которой ее вернули),
 //     это называется "замыкание"
 
-const fnA = function (parameter) {
-    const innerVariable = 'значение внутренней функции fnA';
-    const innerFunction = function () {
-        console.log(parameter);
-        console.log(innerVariable);
-        console.log('Это функция вызова innerFunction');
-    }
-    return innerFunction;
-};
+// const fnA = function (parameter) {
+//     const innerVariable = 'значение внутренней функции fnA';
+//     const innerFunction = function () {
+//         console.log(parameter);
+//         console.log(innerVariable);
+//         console.log('Это функция вызова innerFunction');
+//     }
+//     return innerFunction;
+// };
 
-const fnB = fnA(555);
-fnB();
-console.log(fnB);
+// const fnB = fnA(555);
+// fnB();
+// console.log(fnB);
 
 
 // ********Поваренок
@@ -34,20 +34,84 @@ console.log(fnB);
 // makeDish('Poly', 'супчик');
 // makeDish('Poly', 'кофе');
 
-const makeSheff = function (name) {
-    const makeDish = function (dish) {
-        console.log(`${name} готовит ${dish}`);
+
+// ----------------------------------------------------
+
+
+// const makeSheff = function (name) {
+//     const makeDish = function (dish) {
+//         console.log(`${name} готовит ${dish}`);
+//     };
+//     return makeDish;
+// };
+
+// const mango = makeSheff('Mango');
+ 
+// mango('чай');
+// mango('apple');
+
+
+
+// ******** округлятор
+
+// const floatingPoint = 3.456789;
+// const someInt = Math.round(floatingPoint); // 3
+// const withDecimals = Number(floatingPoint.toFixed(2)); // 3.36
+
+// function round(places) {
+//     return function (num) {
+//         return Number(num.toFixed(places));
+//     };
+// }
+
+// const rounder2 = round(2);
+// const rounder3 = round(3);
+
+// console.log(rounder2(floatingPoint));// 3.46
+// rounder3(floatingPoint); //3.467
+
+// -------------------------------------------------------------
+
+// const rounder = function (places) {
+//     const floatPoint = function (number) {
+//         console.log(Number(number.toFixed(places)));
+//     };
+//     return floatPoint;
+// } 
+
+// const nambers = rounder(3);
+
+// nambers(5.89057);
+// nambers(2.1234);
+// nambers(1.7654021);
+
+
+// Приватные данные и функции - скрытие реализации, интерфейс
+
+const salaryManagerFactory = function (eployeeName, baseSalary) {
+    let salary = baseSalary;
+
+    const changeBy = function (amout) {
+        salary += amout;
+
     };
-    return makeDish;
+
+    return {
+        raise(amout) {
+            changeBy(amout);
+        },
+        lower(amout) {
+            changeBy(amout);
+        },
+        current() {
+        return `Tекущая зарплата ${eployeeName} - ${salary}`;
+    },
+   };
+ 
 };
 
-const mango = makeSheff('Mango');
- 
-mango('чай');
-mango('apple');
-
-
-
+const salaryManager = salaryManagerFactory('Mongo', 5000);
+console.log(salaryManager.current());
 
 
 
