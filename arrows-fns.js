@@ -24,6 +24,12 @@
 // console.log(add(5, 6, 7));
 // console.log(addArrow1(2, 4, 8));
 
+// ******* -------Псевдомассив argumants ---------
+const add = (...agr) => {
+    console.log(agr);
+};
+
+console.log(add(1, 3, 6, 8));
 
 // const fnA = function () {
 //     return {
@@ -40,46 +46,46 @@
 
 // ************----Геолокация----------
 
-const onGetPositionSucces = (position) => {
-    console.log(position);
-}
+// const onGetPositionSucces = (position) => {
+//     console.log(position);
+// }
 
-const onGetPositionError = (error) => {
-    console.log(error);
-}
-window.navigator.geolocation.getCurrentPosition(
-    onGetPositionError, onGetPositionSucces,
-)
+// const onGetPositionError = (error) => {
+//     console.log(error);
+// }
+// window.navigator.geolocation.getCurrentPosition(
+//     onGetPositionError, onGetPositionSucces,
+// )
 
 
 // ********функция фильтр
 
-const filter = (array, test)=> {
-    const filterArray = [];
+// const filter = (array, test)=> {
+//     const filterArray = [];
 
-    for (const el of array) {
-        console.log(el);
-        const passed = test(el);
+//     for (const el of array) {
+//         console.log(el);
+//         const passed = test(el);
 
-        if (passed) {
-            filterArray.push(el)
-        }
-    } 
+//         if (passed) {
+//             filterArray.push(el)
+//         }
+//     } 
     
-    return filterArray;
-};
+//     return filterArray;
+// };
 
-const callback1 = value => value >= 3;
-
-
-const callback2 = value => value >= 4;
+// const callback1 = value => value >= 3;
 
 
-console.log(filter([1, 2, 3, 4, 5], callback1));
-console.log(filter([0, 1, 2, 3, 7, 8, 9, 6], callback2));
+// const callback2 = value => value >= 4;
 
-const frutis = [
-    { name: 'apple', quantity: 200, isFresh: true },
-    { name: 'grapes', quantity: 150, isFresh: false },
-    { name: 'bananas', quantity: 180, isFresh: true },
-]
+
+// console.log(filter([1, 2, 3, 4, 5], callback1));
+// console.log(filter([0, 1, 2, 3, 7, 8, 9, 6], callback2));
+
+// const frutis = [
+//     { name: 'apple', quantity: 200, isFresh: true },
+//     { name: 'grapes', quantity: 150, isFresh: false },
+//     { name: 'bananas', quantity: 180, isFresh: true },
+// ]
