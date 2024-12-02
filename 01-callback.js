@@ -77,7 +77,7 @@
 //     onGetPositionError, onGetPositionSucces,
 // )
 
-// ****** Щтложеный вызов: интервылы
+// ****** Oтложеный вызов: интервылы
 
 // const callback = function () {
 //     console.log('Через 3 секунды внутри колбека в таймауте');
@@ -89,7 +89,7 @@
 
 // console.log('В коде после таймауте');
 
-// ****** Щтложенный вызов: http-запрос
+// ****** Oтложенный вызов: http-запрос
 // - API URL:https://pokeapi.co/api/v2/pokemon
 
 // const onRequestSuccess = function (reponse) {
