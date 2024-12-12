@@ -32,13 +32,28 @@
 
 //  ***** Стелки как методы объекта не бывают-------
 
-const user = {
-    fullName: 'Mongo',
-    showName:() => {
-        console.log('this:', this);
-        console.log('this.fullname:', this);
-    },
+// const user = {
+//     fullName: 'Mongo',
+//     showName:() => {
+//         console.log('this:', this);
+//         console.log('this.fullname:', this);
+//     },
 
+// };
+
+// user.showName();// undefind
+
+//****** Стрелка-конструктор------------
+
+const User = function(name){
+    this.name = name;
 };
 
-user.showName();// undefind
+console.log(new User('Mango')); // работает
+
+const User2 = (name) => {
+    this.name = name;
+};
+
+console.log(new User2('Mango'));// не работает
+
